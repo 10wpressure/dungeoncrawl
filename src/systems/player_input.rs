@@ -19,15 +19,17 @@ pub fn player_input(
         };
 
         if delta.x != 0 || delta.y != 0 {
-            let mut players = <&mut Point>::query().filter(component::<Player>()); //TODO: try chaining - should work
-            players.iter_mut(ecs).for_each(|pos| {
-                let destination = *pos + delta;
+            <&mut Point>::query()
+                .filter(component::<Player>())
+                .iter_mut(ecs)
+                .for_each(|pos| {
+                    let destination = *pos + delta;
 
-                if map.can_enter_tile(destination) {
-                    *pos = destination;
-                    camera.on_player_move(destination);
-                }
-            });
+                    if map.can_enter_tile(destination) {
+                        *pos = destination;
+                        camera.on_player_move(destination);
+                    }
+                });
         }
     }
 }

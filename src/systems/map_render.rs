@@ -1,5 +1,4 @@
 use crate::prelude::*;
-use legion::systems::Resource;
 
 #[system]
 pub fn map_render(#[resource] map: &Map, #[resource] camera: &Camera) {
@@ -13,7 +12,7 @@ pub fn map_render(#[resource] map: &Map, #[resource] camera: &Camera) {
                 let idx = map_idx(x, y);
                 let glyph = match map.tiles[idx] {
                     TileType::Floor => to_cp437('.'),
-                    TileType::Wall => to_cp437('░'),
+                    TileType::Wall => to_cp437('#'),
                 };
                 draw_batch.set(pt - offset, ColorPair::new(WHITE, BLACK), glyph);
             }
