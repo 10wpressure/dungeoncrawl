@@ -6,11 +6,17 @@ pub struct Render {
     pub glyph: FontCharType,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct Player;
 
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct Enemy;
 
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct MovingRandomly;
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct WantsToMove {
+    pub entity: Entity,
+    pub destination: Point,
+}
