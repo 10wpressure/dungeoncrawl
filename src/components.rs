@@ -20,3 +20,11 @@ pub struct WantsToMove {
     pub entity: Entity,
     pub destination: Point,
 }
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Health {
+    pub(crate) current: i32,
+    pub(crate) max: i32,
+}
+
+#[derive(Clone, PartialEq, Eq)]
+pub struct Name(pub String);
