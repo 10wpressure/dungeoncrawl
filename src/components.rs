@@ -28,6 +28,9 @@ pub struct WantsToAttack {
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct ChasingPlayer;
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct Health {
     pub(crate) current: i32,
     pub(crate) max: i32,
