@@ -38,3 +38,9 @@ pub struct Health {
 
 #[derive(Clone, PartialEq, Eq)]
 pub struct Name(pub String);
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Item;
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct AmuletOfYala;
