@@ -31,7 +31,7 @@ pub fn player_input(
             enemies
                 .iter(ecs)
                 .filter(|(_, pos)| **pos == destination)
-                .for_each(|(entity, pos)| {
+                .for_each(|(entity, _)| {
                     hit_something = true;
                     commands.push((
                         (),
