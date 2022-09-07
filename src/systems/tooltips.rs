@@ -8,7 +8,7 @@ use crate::prelude::*;
 #[read_component(FieldOfView)]
 pub fn tooltips(ecs: &SubWorld, #[resource] mouse_pos: &Point, #[resource] camera: &Camera) {
     let mut fov = <&FieldOfView>::query().filter(component::<Player>());
-    let mut player_fov = fov.iter(ecs).next().unwrap();
+    let player_fov = fov.iter(ecs).next().unwrap();
     let mut positions = <(Entity, &Point, &Name)>::query();
     let offset = Point::new(camera.left_x, camera.top_y);
     let map_pos = *mouse_pos + offset;
