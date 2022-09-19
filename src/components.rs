@@ -1,5 +1,5 @@
-use std::collections::HashSet;
 use crate::prelude::*;
+use std::collections::HashSet;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Render {
@@ -32,16 +32,33 @@ pub struct WantsToAttack {
 pub struct ChasingPlayer;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct ProvidesHealing {
+    pub amount: i32,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct Health {
     pub(crate) current: i32,
     pub(crate) max: i32,
 }
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct ProvidesDungeonMap;
 
 #[derive(Clone, PartialEq, Eq)]
 pub struct Name(pub String);
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct Item;
+
+#[derive(Clone, PartialEq, Eq)]
+pub struct Carried(pub Entity);
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct ActivateItem {
+    pub used_by: Entity,
+    pub item: Entity,
+}
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct AmuletOfYala;
@@ -69,5 +86,4 @@ impl FieldOfView {
             is_dirty: true,
         }
     }
-
 }
