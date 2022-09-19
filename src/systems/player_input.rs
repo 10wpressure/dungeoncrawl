@@ -36,7 +36,7 @@ pub fn player_input(
                         commands.add_component(*entity, Carried(player));
                     });
                 Point::new(0, 0)
-            },
+            }
             VirtualKeyCode::Key1 => use_item(0, ecs, commands),
             VirtualKeyCode::Key2 => use_item(1, ecs, commands),
             VirtualKeyCode::Key3 => use_item(2, ecs, commands),
@@ -83,16 +83,6 @@ pub fn player_input(
                         destination,
                     },
                 ));
-            }
-        }
-
-        if !did_something {
-            if let Ok(mut health) = ecs
-                .entry_mut(player_entity)
-                .unwrap()
-                .get_component_mut::<Health>()
-            {
-                health.current = i32::min(health.max, health.current + 1);
             }
         }
 
