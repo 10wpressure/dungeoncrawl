@@ -57,6 +57,12 @@ pub struct Item;
 pub struct Carried(pub Entity);
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Damage(pub i32);
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Weapon;
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct ActivateItem {
     pub used_by: Entity,
     pub item: Entity,

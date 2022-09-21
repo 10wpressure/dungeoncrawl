@@ -9,7 +9,6 @@ use crate::map_builder::prefab::apply_prefab;
 use crate::prelude::*;
 use automata::CellularAutomataArchitect;
 use drunkard::DrunkardsWalkArchitect;
-use empty::EmptyArchitect;
 use rooms::RoomsArchitect;
 use themes::*;
 
